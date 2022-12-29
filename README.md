@@ -1,6 +1,4 @@
-/* 
-  npm install 
-  npm run dev
+npm install 
+npm run dev
 
-  for localisation error: yarn dev --force
-*/
+for localisation error: yarn dev --force
