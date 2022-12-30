@@ -21,7 +21,9 @@ export default function Collections() {
               {data.data.collections.nodes.map((collection) => (
                 <li key={collection.handle}>
                   <Link to={`/collections/${collection.handle}`}>
-                    <span className='inline-block py-2 underline'>{collection.handle}</span>
+                    <span className='inline-block py-2 underline'>
+                      {collection.handle}
+                    </span>
                   </Link>
                 </li>
               ))}

@@ -29,7 +29,6 @@ export default function Layout({ children }) {
               <Link to="/catalog">Catalog</Link>
             </li>
             <li>
-              {/* <Link to="/collections/freestyle">Freestyle</Link> */}
               <Link to="/collections">Collections</Link>
             </li>
             <li>
