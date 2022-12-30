@@ -1,4 +1,4 @@
-import Layout from '../components/Layout.server';
+import Layout from '../components/Layout.server'
 
 export default function Home() {
   return (
@@ -7,5 +7,5 @@ export default function Home() {
         <h1>Homepage</h1>
       </div>
     </Layout>
-  );
+  )
 }

@@ -1,32 +1,30 @@
-import { useShopQuery, CacheLong, gql } from '@shopify/hydrogen';
-import { Suspense } from 'react';
-
-import Layout from '../components/Layout.server';
-import ProductCard from '../components/ProductGridItem.server';
+import { Suspense } from 'react'
+import { useShopQuery, CacheLong, gql } from '@shopify/hydrogen'
+import Layout from '../components/Layout.server'
+import ProductCard from '../components/ProductCard.server'
 
 export default function Catalog() {
+  const data = useShopQuery({
+    query: QUERY,
+    cache: CacheLong(),
+    preload: true,
+  })
 
-    const data = useShopQuery({
-        query: QUERY,
-        cache: CacheLong(),
-        preload: true,
-    });
+  const { data: { products: { nodes } } } = data
 
-    const { data: { products: { nodes } } } = data;
-
-    return (
-        <Layout>
-            <Suspense>
-                <div className="container pt-3">
-                    <div className="product-grid">
-                        {nodes.map((product) => (
-                            <ProductCard product={product}></ProductCard>
-                        ))}
-                    </div>
-                </div>
-            </Suspense>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <Suspense>
+        <div className="container pt-3">
+          <div className="product-grid">
+            {nodes.map((product) => (
+              <ProductCard product={product} />
+            ))}
+          </div>
+        </div>
+      </Suspense>
+    </Layout>
+  )
 }
 
 const QUERY = gql`
@@ -56,4 +54,4 @@ query products {
       }
     }
   }
-`;
+`

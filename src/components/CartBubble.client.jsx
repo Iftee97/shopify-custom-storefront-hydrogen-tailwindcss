@@ -1,14 +1,15 @@
-import { useCart } from '@shopify/hydrogen';
+import { useCart } from '@shopify/hydrogen'
 
 export default function CartBubble() {
+  const { totalQuantity } = useCart()
 
-  const { totalQuantity } = useCart();
-
-  if(totalQuantity < 1) {
-    return null;
+  if (totalQuantity < 1) {
+    return null
   }
 
   return (
-    <span className="relative -top-1 text-sm">({ totalQuantity })</span>
+    <span className="relative -top-1 text-sm">
+      ({totalQuantity})
+    </span>
   )
 }

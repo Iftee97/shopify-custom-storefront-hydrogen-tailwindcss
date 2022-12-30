@@ -1,30 +1,28 @@
-import { useShopQuery, gql, CacheLong, useRouteParams, Seo } from "@shopify/hydrogen";
-import { Suspense } from "react";
-
-import Layout from "../../components/Layout.server";
-import ProductDetails from "../../components/ProductDetails.client";
+import { Suspense } from "react"
+import { useShopQuery, gql, useRouteParams, Seo } from "@shopify/hydrogen"
+import Layout from "../../components/Layout.server"
+import ProductDetails from "../../components/ProductDetails.client"
 
 export default function Product() {
-    const { handle } = useRouteParams();
+  const { handle } = useRouteParams()
 
-    const { data: { product: product } } = useShopQuery({
-        query: QUERY,
-        variables: {
-            handle
-        }
-    })
+  const { data: { product: product } } = useShopQuery({
+    query: QUERY,
+    variables: {
+      handle
+    }
+  })
 
-    return (
-        <Layout>
-            <Suspense>
-                <Seo type="product" data={product} />
-            </Suspense>
-            <div className="product-page container">
-                <ProductDetails product={product}/>
-            </div>
-        </Layout>
-        
-    )
+  return (
+    <Layout>
+      <Suspense>
+        <Seo type="product" data={product} />
+      </Suspense>
+      <div className="product-page container">
+        <ProductDetails product={product} />
+      </div>
+    </Layout>
+  )
 }
 
 const QUERY = gql`
@@ -65,4 +63,4 @@ query Product($handle: String!) {
       }
     }
   }
-`;
+`
