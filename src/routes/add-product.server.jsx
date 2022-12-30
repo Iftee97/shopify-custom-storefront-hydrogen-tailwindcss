@@ -15,7 +15,7 @@ export default function AddProduct() {
         "cold"
       ]
     }
-  });
+  })
 
   const product = fetchSync('https://another-store0.myshopify.com/admin/api/2022-10/products.json', {
     method: 'post',
