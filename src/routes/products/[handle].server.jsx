@@ -26,7 +26,7 @@ export default function Product() {
 }
 
 const QUERY = gql`
-query Product($handle: String!) {
+  query Product($handle: String!) {
     product(handle: $handle) {
       title
       descriptionHtml
@@ -45,20 +45,20 @@ query Product($handle: String!) {
       }
       variants(first: 100) {
         nodes {
-            id
-            availableForSale
-            priceV2 {
-                amount
-                currencyCode
-            }
-            compareAtPriceV2 {
-                amount
-                currencyCode
-            }
-            selectedOptions {
-                name
-                value
-            }
+          id
+          availableForSale
+          priceV2 {
+            amount
+            currencyCode
+          }
+          compareAtPriceV2 {
+            amount
+            currencyCode
+          }
+          selectedOptions {
+            name
+            value
+          }
         }
       }
     }
