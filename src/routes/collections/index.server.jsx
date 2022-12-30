@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { useShopQuery, CacheLong, gql, Link, Image } from '@shopify/hydrogen'
+import { useShopQuery, CacheLong, gql, Link } from '@shopify/hydrogen'
 import Layout from '../../components/Layout.server'
 
 export default function Collections() {
@@ -10,7 +10,6 @@ export default function Collections() {
   })
 
   // console.log(data.data.collections.nodes)
-  console.log(data.data.collections.nodes[0])
 
   return (
     <>
@@ -51,4 +50,3 @@ const COLLECTIONS_QUERY = gql`
     }
   }
 `
-// WE'LL WORK ON THIS LATER
