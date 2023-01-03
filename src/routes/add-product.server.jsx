@@ -1,10 +1,9 @@
-import { Suspense } from 'react'
 import { fetchSync } from '@shopify/hydrogen'
 import Layout from '../components/Layout.server'
 import ProductDetails from '../components/ProductDetails.client'
 
 export default function AddProduct() {
-  var raw = JSON.stringify({
+  const stringifiedProduct = JSON.stringify({
     "product": {
       "title": "Very cool product 2",
       "body_html": "Html body for product",
@@ -23,7 +22,7 @@ export default function AddProduct() {
       'Content-Type': 'application/json',
       'X-Shopify-Access-Token': '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'
     },
-    body: raw
+    body: stringifiedProduct
   }).json()
 
   console.log('product', product)
