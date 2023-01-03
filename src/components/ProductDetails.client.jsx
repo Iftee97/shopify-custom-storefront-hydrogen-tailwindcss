@@ -6,7 +6,7 @@ export default function ProductDetails({ product }) {
   return (
     <ProductOptionsProvider data={product}>
       {/* uncomment later */}
-      {/* <Image data={product.media.nodes[0].image} className="product-page-image" /> */}
+      <Image data={product.media.nodes[0].image} className="product-page-image" />
       <ProductForm product={product} />
     </ProductOptionsProvider>
   )
@@ -23,7 +23,7 @@ function ProductForm({ product }) {
         className="mb-2"
         withoutTrailingZeros
         data={product}
-      // variantId={selectedVariant.id} // // uncomment this line to show the price of the selected variant
+        variantId={selectedVariant.id} // // uncomment this line to show the price of the selected variant
       />
       <div className="product-options">
         {options.map(({ name, values }) => {
