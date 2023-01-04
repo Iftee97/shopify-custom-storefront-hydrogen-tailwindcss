@@ -3,6 +3,7 @@ import Layout from '../components/Layout.server'
 import ProductDetails from '../components/ProductDetails.client'
 
 export default function AddProduct() {
+  // create a product
   const product = fetchSync('https://another-store0.myshopify.com/admin/api/2022-10/products.json', {
     method: 'post',
     headers: {
@@ -22,7 +23,7 @@ export default function AddProduct() {
       }
     })
   }).json()
-  console.log('product', product)
+  // console.log('product', product)
 
   return (
     <Layout>
