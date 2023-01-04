@@ -14,7 +14,6 @@ export default function Collection() {
       handle
     }
   })
-
   const { data: { collection: collection } } = data
   const { products: { nodes } } = collection
 

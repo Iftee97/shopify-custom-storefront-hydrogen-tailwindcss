@@ -8,10 +8,7 @@ export default function Blog() {
     cache: CacheLong,
     preload: true
   })
-
   const { data: { blog: { articles: { nodes: articles } } } } = data
-
-  // console.log(articles)
 
   return (
     <Layout>

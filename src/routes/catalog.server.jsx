@@ -9,7 +9,6 @@ export default function Catalog() {
     cache: CacheLong(),
     preload: true,
   })
-
   const { data: { products: { nodes } } } = data
 
   return (
